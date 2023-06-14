@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:plan_name",
+ "creation": "2023-05-05 09:27:21.720288",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "plan_duration",
+  "plan_price",
+  "plan_description",
+  "plan_service",
+  "plan_term",
+  "route",
+  "trainers_section",
+  "trainer_user",
+  "count_subscription"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plan Name",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plan_duration",
+   "fieldtype": "Select",
+   "label": "Duration",
+   "options": "1 Month\n3 Month\n6 Month\n12 Month"
+  },
+  {
+   "fieldname": "plan_price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "plan_description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "plan_service",
+   "fieldtype": "Text Editor",
+   "label": "Services Included"
+  },
+  {
+   "fieldname": "plan_term",
+   "fieldtype": "Text Editor",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "trainers_section",
+   "fieldtype": "Section Break",
+   "label": "Trainers"
+  },
+  {
+   "fieldname": "trainer_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "count_subscription",
+   "fieldtype": "Int",
+   "label": "Count Subscription"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-05 12:31:06.422639",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Professional Trainer Plan",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "professionalplan",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,4 +1,4 @@
-# Copyright (c) 2023, norazam aziz and Contributors
+# Copyright (c) 2023, Mr Ameen and Contributors
 # See license.txt
 
 # import frappe

@@ -1,79 +1,85 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LORAGYM-{MM}-{#####}",
- "creation": "2023-04-20 22:25:12.256092",
+ "autoname": "field:email",
+ "creation": "2023-04-27 15:55:46.697653",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "customer_info_section",
+  "full_name",
   "first_name",
   "last_name",
-  "gender",
-  "age",
-  "amended_from",
-  "address",
-  "phone_number"
+  "email",
+  "column_break_asote",
+  "user",
+  "section_break_pr4wn",
+  "pick_locker"
  ],
  "fields": [
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "First Name",
+   "label": "First name",
    "reqd": 1
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Last Name ",
-   "reqd": 1
+   "label": "Last name"
   },
   {
-   "fieldname": "gender",
+   "fieldname": "email",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Gender",
-   "reqd": 1
+   "label": "Email",
+   "reqd": 1,
+   "unique": 1
   },
   {
-   "fieldname": "age",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Age",
-   "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
+   "fieldname": "user",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Member",
-   "print_hide": 1,
-   "read_only": 1
+   "label": "User",
+   "options": "User"
   },
   {
-   "fieldname": "address",
+   "fieldname": "section_break_pr4wn",
+   "fieldtype": "Section Break",
+   "label": "Locker"
+  },
+  {
+   "fieldname": "customer_info_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Info"
+  },
+  {
+   "fieldname": "column_break_asote",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pick_locker",
+   "fieldtype": "Table",
+   "options": "Gym Locker Child"
+  },
+  {
+   "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Address",
-   "reqd": 1
-  },
-  {
-   "fieldname": "phone_number",
-   "fieldtype": "Phone",
-   "label": "Phone Number",
-   "reqd": 1
+   "in_list_view": 1,
+   "label": "Full name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-03 01:52:09.844910",
+ "modified": "2023-05-05 11:35:50.875210",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Member",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -89,7 +95,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

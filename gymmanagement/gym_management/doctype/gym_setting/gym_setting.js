@@ -1,8 +1,8 @@
-// Copyright (c) 2023, norazam aziz and contributors
+// Copyright (c) 2023, Mr Ameen and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Gym Setting", {
-// 	refresh(frm) {
+frappe.ui.form.on('Gym Setting', {
+	// refresh: function(frm) {
 
-// 	},
-// });
+	// }
+});

@@ -1,0 +1,38 @@
+{
+ "cards": [
+  {
+   "card": "Total Height (in cm)"
+  },
+  {
+   "card": "Total Weight (in kg)"
+  },
+  {
+   "card": "Age"
+  },
+  {
+   "card": "Total BMI"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Calories Burn",
+   "width": "Full"
+  },
+  {
+   "chart": "Workout Trackers",
+   "width": "Full"
+  }
+ ],
+ "creation": "2023-05-02 12:04:23.012805",
+ "dashboard_name": "Fitness Profile",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2023-05-02 12:57:40.455675",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Fitness Profile",
+ "owner": "Administrator"
+}

@@ -1,0 +1,17 @@
+[
+ {
+  "calories_intake": 0.0,
+  "customer_name": "ameen@loranet.my",
+  "dateupdated": "2023-05-05 17:32:58",
+  "docstatus": 0,
+  "doctype": "Gym Fitness Profile",
+  "duration_in_minute": "10",
+  "exercise_routines": "Cycling",
+  "full_name": "mustapha ameen",
+  "height": 167.3,
+  "modified": "2023-05-05 17:33:11.402407",
+  "name": "ameen@loranet.my-2023-5-5 17:32:58",
+  "total_bmi": 18.042615586,
+  "weight": 50.5
+ }
+]

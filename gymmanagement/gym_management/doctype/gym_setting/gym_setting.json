@@ -1,47 +1,58 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:GYMSET-{MM}-{#####}",
- "creation": "2023-05-03 02:39:43.206232",
+ "creation": "2023-05-03 18:45:20.128650",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "default_language",
-  "currency",
-  "gym_phone"
+  "app_name",
+  "country",
+  "column_break_e7irn",
+  "language",
+  "currency"
  ],
  "fields": [
   {
-   "fieldname": "default_language",
+   "fieldname": "app_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Default Language",
-   "reqd": 1
+   "label": "App Name"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Language",
+   "options": "Language"
   },
   {
    "fieldname": "currency",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Currency",
-   "reqd": 1
+   "options": "Currency"
   },
   {
-   "fieldname": "gym_phone",
-   "fieldtype": "Phone",
-   "label": "Gym Phone",
-   "reqd": 1
+   "fieldname": "column_break_e7irn",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-05-03 02:42:41.437046",
+ "modified": "2023-05-03 18:46:53.155849",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Setting",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,165 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+
+<div class="subscription-plan">
+  <div class="duration-price">
+    <div class="duration">Duration: {{ plan_duration }}</div>
+    <div class="price">RM {{ plan_price }}0</div>
+  </div>
+
+  <div class="description">
+    <h3>Description:</h3>
+    <p>{{ plan_description }}</p>
+  </div>
+  
+  <div class="services-included">
+    <h3>Services Included:</h3>
+    <p>{{ plan_service }}</p>
+  </div>
+  
+  <div class="terms-and-conditions">
+    <h3>Terms and Conditions:</h3>
+    <p>{{ plan_term }}</p>
+  </div>
+  
+  <div class="subscribe-btn-center">
+    <button class="subscribe-btn" id="subscribe-btn" data-plan-name="{{ plan_name }}">Subscribe Now</button>
+  </div>
+</div>
+
+<style>
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Subscription Plan Styles */
+.subscription-plan {
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.subscription-plan .duration-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.subscription-plan .duration {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subscription-plan .price {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.subscription-plan .description {
+  margin-bottom: 20px;
+}
+
+.subscription-plan .description h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subscription-plan .services-included {
+  margin-bottom: 20px;
+}
+
+.subscription-plan .services-included h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subscription-plan .terms-and-conditions {
+  margin-bottom: 20px;
+}
+
+.subscription-plan .terms-and-conditions h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subscription-plan .subscribe-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.subscription-plan .subscribe-btn-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscription-plan .subscribe-btn:hover {
+  background-color: #2980b9;
+}
+
+</style>
+
+<script>
+  frappe.ready(function() {
+    // bind click event to subscribe button
+    $(document).on('click', '#subscribe-btn', function() {
+      var plan_name = $(this).attr('data-plan-name');
+      var trainer_user = '{{ trainer_user }}';
+      var plan_price = '{{ plan_price }}';
+      var plan_duration = '{{ plan_duration }}';
+      var count_subscription = '{{ count_subscription }}';
+      console.log('Subscribing to ' + plan_name+' trainer_user:'+trainer_user+' plan_price:'+plan_price);
+      // return
+      
+      // create new Gym Membership document
+      frappe.call({
+        method: "gym_management.services.rest.create_gym_membership",
+        args: {
+          plan_name: plan_name,
+          trainer_user: trainer_user,
+          plan_price:plan_price,
+          plan_duration:plan_duration,
+          plan_type:'professional',
+          count_subscription: count_subscription,
+        },
+        callback: function(response) {
+          if (response.message == 'success') {
+            frappe.show_alert({
+              message: 'You have subscribed to ' + plan_name,
+              indicator: 'green'
+            });
+            setTimeout(function(){
+              window.location.href = '/thankyou';
+            },1500)
+          } else {
+            frappe.show_alert({
+              message: 'Subscription failed. Please try again later.',
+              indicator: 'red'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>  
+
+{% endblock %}

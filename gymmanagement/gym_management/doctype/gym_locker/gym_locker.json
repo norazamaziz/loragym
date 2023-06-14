@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "creation": "2023-04-28 09:43:44.920347",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "status",
+  "last_user_used",
+  "last_date"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "status",
+   "options": "Availaible\nNot Availaible",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_user_used",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "last_user_used"
+  },
+  {
+   "fieldname": "last_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "last_date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-04 20:38:00.681768",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Locker",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

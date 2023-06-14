@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{customer_name}-{dateupdated}",
+ "creation": "2023-05-02 11:14:07.833379",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_name",
+  "full_name",
+  "height",
+  "weight",
+  "total_bmi",
+  "column_break_yhdv7",
+  "exercise_routines",
+  "duration_in_minute",
+  "calories_intake",
+  "section_break_zduhb",
+  "dateupdated"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Gym Membership",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_name.height",
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height (in cm)",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_name.weight",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight (in kg)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_bmi",
+   "fieldtype": "Float",
+   "label": "Total BMI",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer_name.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calories_intake",
+   "fieldtype": "Float",
+   "label": "Total calories intake",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exercise_routines",
+   "fieldtype": "Link",
+   "label": "Exercise routines",
+   "options": "Gym Activity"
+  },
+  {
+   "fieldname": "column_break_yhdv7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration_in_minute",
+   "fieldtype": "Select",
+   "label": "Duration in minute",
+   "options": "10\n20\n30\n40\n50\n60\n90\n120\n150\n180\n210\n240\n270\n300"
+  },
+  {
+   "fieldname": "section_break_zduhb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dateupdated",
+   "fieldtype": "Datetime",
+   "label": "Date updated",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-05 17:38:39.102115",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Fitness Profile",
+ "name_case": "Title Case",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}

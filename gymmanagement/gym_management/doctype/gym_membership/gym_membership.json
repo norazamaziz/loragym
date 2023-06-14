@@ -1,55 +1,147 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:GYMPLN-{MM}-{#####}",
- "creation": "2023-05-03 02:00:21.357038",
+ "autoname": "field:user_membership",
+ "creation": "2023-04-27 21:53:57.378358",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "plan_name",
-  "description",
-  "durations",
-  "fees"
+  "user_membership",
+  "full_name",
+  "status",
+  "height",
+  "weight",
+  "column_break_q4qvj",
+  "start_plan",
+  "end_plan",
+  "plan_subscription_section",
+  "member_plan",
+  "column_break_x995b",
+  "pro_plan",
+  "section_break_82xj3",
+  "subscription_no",
+  "column_break_z9co3",
+  "remaining_days_left",
+  "locker_section",
+  "pick_locker_membership"
  ],
  "fields": [
   {
-   "fieldname": "plan_name",
+   "fieldname": "member_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Standard plan",
+   "options": "Gym Subscription Plan"
+  },
+  {
+   "fieldname": "start_plan",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start date"
+  },
+  {
+   "fieldname": "end_plan",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End date"
+  },
+  {
+   "fieldname": "user_membership",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Choose member",
+   "options": "Gym Member",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "user_membership.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full name",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_q4qvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_82xj3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "subscription_no",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Plan name",
-   "reqd": 1
+   "label": "Subscription No",
+   "read_only": 1,
+   "unique": 1
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Long Text",
-   "in_list_view": 1,
-   "label": "Description",
-   "reqd": 1
+   "fieldname": "locker_section",
+   "fieldtype": "Section Break",
+   "label": "Locker"
   },
   {
-   "fieldname": "durations",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Durations",
-   "reqd": 1
+   "fieldname": "pick_locker_membership",
+   "fieldtype": "Table",
+   "options": "Gym Locker Child"
   },
   {
-   "fieldname": "fees",
-   "fieldtype": "Currency",
+   "fieldname": "plan_subscription_section",
+   "fieldtype": "Section Break",
+   "label": "Plan subscription"
+  },
+  {
+   "fieldname": "column_break_x995b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pro_plan",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Fees",
-   "reqd": 1
+   "label": "Professional plan",
+   "options": "Gym Professional Trainer Plan"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "remaining_days_left",
+   "fieldtype": "Int",
+   "label": "Remaining days left",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_z9co3",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-03 02:00:21.357038",
+ "modified": "2023-05-05 22:25:30.037801",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -63,9 +155,18 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

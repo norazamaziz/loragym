@@ -1,47 +1,53 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:GYMWKPLEX-{MM}-{#####}",
- "creation": "2023-05-03 02:54:02.265977",
+ "creation": "2023-04-29 19:11:25.269840",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "exercise_name",
-  "sets",
-  "repeat"
+  "plan_exercise",
+  "workout_name",
+  "status",
+  "operation"
  ],
  "fields": [
   {
-   "fieldname": "exercise_name",
+   "fieldname": "plan_exercise",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plan exercise",
+   "options": "Gym Workout Plan"
+  },
+  {
+   "fetch_from": "plan_exercise.workout",
+   "fieldname": "workout_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Exercise Name",
-   "reqd": 1
+   "label": "Workout name",
+   "read_only": 1
   },
   {
-   "fieldname": "sets",
-   "fieldtype": "Int",
+   "fieldname": "status",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Sets",
-   "reqd": 1
+   "label": "Status",
+   "options": "enabled\ndisabled"
   },
   {
-   "fieldname": "repeat",
-   "fieldtype": "Int",
+   "fieldname": "operation",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Repeat",
-   "reqd": 1
+   "label": "Operation"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-05-05 10:47:36.739417",
+ "modified": "2023-04-29 21:47:50.421608",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workout Plan Exercise",
- "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

@@ -1,7 +1,7 @@
 ## Gym Management
 
 A system to manage gym operation and track memberships
-"""
+
 Scenarios
 Your app should handle the following scenarios:
 
@@ -73,4 +73,3 @@ Revenue report by month
         ● Override the 404 page from the framework, and create your own version.
         ● If you have an idea that you think should be there in this system instead of
         the ones suggested here, feel free to implement it.
-"""

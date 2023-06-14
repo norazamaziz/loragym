@@ -1,62 +1,92 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:LORATR-{MM}-{#####}",
- "creation": "2023-05-03 02:05:45.177859",
+ "autoname": "field:user_trainer",
+ "creation": "2023-04-27 21:54:25.345561",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "first_name",
-  "last_name",
+  "user_trainer",
+  "full_name",
+  "status",
+  "phone",
   "address",
-  "phone_number",
-  "email"
+  "type_trainer",
+  "membership_subsribed_plan_section",
+  "gym_training",
+  "locker_section",
+  "pick_locker_trainer"
  ],
  "fields": [
   {
-   "fieldname": "first_name",
-   "fieldtype": "Data",
+   "fieldname": "user_trainer",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "First Name",
-   "reqd": 1
+   "label": "Gym Trainer",
+   "options": "Gym Member",
+   "unique": 1
   },
   {
-   "fieldname": "last_name",
+   "fetch_from": "user_trainer.full_name",
+   "fieldname": "full_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Last Name",
-   "reqd": 1
+   "label": "Full name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gym_training",
+   "fieldtype": "Table",
+   "options": "Gym Trainer Child"
+  },
+  {
+   "fieldname": "membership_subsribed_plan_section",
+   "fieldtype": "Section Break",
+   "label": "Membership Subsribed Plan"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
+  },
+  {
+   "fieldname": "locker_section",
+   "fieldtype": "Section Break",
+   "label": "Locker"
+  },
+  {
+   "fieldname": "pick_locker_trainer",
+   "fieldtype": "Table",
+   "options": "Gym Locker Child"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
   },
   {
    "fieldname": "address",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Address",
-   "reqd": 1
+   "fieldtype": "Long Text",
+   "label": "Address"
   },
   {
-   "fieldname": "phone_number",
-   "fieldtype": "Phone",
+   "fieldname": "type_trainer",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Phone Number",
-   "reqd": 1
-  },
-  {
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email",
-   "reqd": 1
+   "label": "Type trainer",
+   "options": "Gym\nClass"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-03 02:06:44.204556",
+ "modified": "2023-05-05 22:44:43.880557",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -70,9 +100,20 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1,
+   "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

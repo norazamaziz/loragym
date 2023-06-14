@@ -1,0 +1,100 @@
+<!-- 
+<style>
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  }
+  
+  .card-header {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-body ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card-body li {
+    padding: 5px 0;
+  }
+  
+  .card-footer {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card-footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .card-footer button {
+    background-color: #2196F3;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card-footer button:hover {
+    background-color: #0D47A1;
+  }
+</style> -->
+<style>
+	.border-radius-10{
+	  border-radius: 10px;
+	  background-color: rgb(244, 244, 244);
+	  margin: 10px;
+	  padding-top: 1px;
+	  
+	}
+	.card-title{
+	  padding-top: 0px;
+	  color: rgb(9, 24, 93);
+	  margin-top: 10px;
+	}
+  </style>
+  
+  
+  <div class="" style="width:30rem;">
+	<div class="card-body border-radius-10">
+		<h4 class="card-title">{{ doc.name }} 
+		</h4>  
+		<h7>
+		  RM{{'%0.2f'| format(doc.plan_price|float)}} - {{ doc.plan_duration }}
+		</h7>
+		<hr>
+	  <div class="">
+		<span>
+		  {{ doc.plan_description }}
+		</span>
+	  </div>
+	  <div style="">
+		<a href="{{ doc.route }}">
+		  <button class="btn btn-primary">Choose Plan</button>
+		</a>
+  
+	  </div>
+	</div>
+  </div>  
+  
+  

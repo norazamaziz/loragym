@@ -1,0 +1,32 @@
+{
+ "cards": [
+  {
+   "card": "Total Calories Burned"
+  },
+  {
+   "card": "Current Weight"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Body Fat Percentage",
+   "width": "Half"
+  },
+  {
+   "chart": "Calorie Intake",
+   "width": "Half"
+  }
+ ],
+ "creation": "2023-05-02 14:59:24.765139",
+ "dashboard_name": "Fitness Metrics Tracking",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2023-05-02 16:24:44.877910",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Fitness Metrics Tracking",
+ "owner": "Administrator"
+}

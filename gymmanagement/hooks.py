@@ -204,3 +204,18 @@ fixtures = [
     "Custom Field",
     "Gym Fitness Profile"
 ]
+website_route_rules = [
+    {"from_route": "/404", "to_route": "404"},
+    
+]
+website_generators = [
+    {
+        "doctype": "Web Page",
+        "condition_field": "route",
+        "generator": "frappe.website.render.render",
+        "template": "404.html",
+        "no_cache": 1
+    },
+   
+]
+

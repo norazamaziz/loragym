@@ -1,4 +1,5 @@
 from . import __version__ as app_version
+from frappe import _
 
 app_name = "gymmanagement"
 app_title = "Gym Management"
@@ -204,18 +205,19 @@ fixtures = [
     "Custom Field",
     "Gym Fitness Profile"
 ]
+# website_catch_all = "not_found"
 website_route_rules = [
-    {"from_route": "/404", "to_route": "404"},
+     {"from_route": "/404", "to_route": "/not_found"},
     
-]
-website_generators = [
-    {
-        "doctype": "Web Page",
-        "condition_field": "route",
-        "generator": "frappe.website.render.render",
-        "template": "404.html",
-        "no_cache": 1
-    },
+ ]
+# website_generators = [
+#     {
+#         "doctype": "Web Page",
+#         "condition_field": "route",
+#         "generator": "frappe.website.render.render",
+#         "template": "404.html",
+#         "no_cache": 1
+#     },
    
-]
+# ]
 
